@@ -15,9 +15,28 @@ Standard ML pipelines for HCC biomarker validation collapse on external data (AU
 
 The DOWN module drives discrimination at the clinical boundary (HCC vs. F4 cirrhosis). Four of five UP genes actually score *higher* in cirrhosis than HCC, making proliferation-only panels unreliable for the screening population.
 
+## How the Signature Was Derived
+
+The 16 genes were selected from two **independent discovery cohorts** that are completely separate from the three validation cohorts:
+
+| Dataset | Role | Why chosen |
+|---------|------|------------|
+| **GSE14520** | HBV-HCC discovery | Paired tumor/non-tumor tissue with clinical annotations (Affymetrix HG-U133A) |
+| **GSE126848** | MASLD/NASH discovery | Histologically graded fibrosis spectrum (F0–F4, RNA-seq counts) |
+
+**Selection pipeline** (reproduced by `scripts/derive_signature.py`):
+
+1. **Differential expression** — Kruskal-Wallis test across disease stages + Spearman monotonic-trend filter across the normal → steatosis → NASH/fibrosis → HCC continuum
+2. **Feature importance** — Random Forest with SHAP values to rank genes by contribution to stage discrimination
+3. **Recursive feature elimination** — Reduced a 27-gene consensus set to 16 genes grouped into two biologically coherent modules (UP: proliferation; DOWN: hepatocyte identity)
+4. **Direction assignment** — Each gene classified as UP or DOWN based on consistent direction in both discovery cohorts
+
+**No validation data (TCGA-LIHC, GSE144269, GSE135251) was used during gene selection.**
+
 ## Method
 
 For each dataset independently:
+
 ```
 Z_gene = (X_gene - μ_normal) / σ_normal
 Score  = mean(Z_up) - mean(Z_down)
@@ -29,6 +48,7 @@ Score  = mean(Z_up) - mean(Z_down)
 - Gene list and directions are fixed a priori
 
 ## Repository Structure
+
 ```
 ├── analysis/
 │   ├── signature_reference.py      # Canonical 16-gene signature (single source of truth)
@@ -46,7 +66,8 @@ Score  = mean(Z_up) - mean(Z_down)
 │   ├── fig2_method_comparison.png  # ML vs parameter-free pipeline (Figure 2)
 │   └── fig3_pergene_asymmetry.png  # Per-gene AUC asymmetry (Figure 3)
 ├── scripts/
-│   └── download_data.sh            # Downloads all public datasets (~500 MB)
+│   ├── download_data.sh            # Downloads all public datasets (~800 MB)
+│   └── derive_signature.py         # Reproduces 16-gene selection from discovery cohorts
 └── paper/
     └── build_paper_v6.js           # Generates the manuscript .docx (requires Node.js + docx)
 ```
@@ -57,21 +78,28 @@ All data are publicly available:
 
 | Dataset | Role | Samples | Source |
 |---------|------|---------|--------|
-| TCGA-LIHC | Primary cohort | 320 HCC + 50 normal | [UCSC Xena](https://xenabrowser.net/) |
+| **GSE14520** | **Discovery** (gene selection) | 247 HCC + 239 non-tumor | [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14520) |
+| **GSE126848** | **Discovery** (gene selection) | 160 MASLD/NASH biopsies (F0–F4) | [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126848) |
+| TCGA-LIHC | Primary validation | 320 HCC + 50 normal | [UCSC Xena](https://xenabrowser.net/) |
 | GSE144269 | External validation | 70 HCC + 70 matched normal | [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE144269) |
-| GSE135251 | Fibrosis spectrum | 216 MASLD/NASH biopsies (F0–F4) | [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135251) |
+| GSE135251 | Fibrosis spectrum validation | 216 MASLD/NASH biopsies (F0–F4) | [GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135251) |
 
 ## Quick Start
+
 ```bash
-# 1. Download all datasets (~500 MB)
+# 1. Download all datasets (~800 MB)
 bash scripts/download_data.sh
 
-# 2. Run the analysis (requires Python 3.10+)
+# 2. Reproduce the gene selection (requires Python 3.10+)
+python scripts/derive_signature.py --save-intermediates
+
+# 3. Run the validation pipeline
 cd analysis
 python signature_reference.py
 ```
 
 ## Building the Paper
+
 ```bash
 cd paper
 npm install docx
@@ -81,7 +109,7 @@ node build_paper_v6.js
 
 ## Requirements
 
-- **Python 3.10+**: NumPy, SciPy, pandas, scikit-learn
+- **Python 3.10+**: NumPy, SciPy, pandas, scikit-learn, shap, statsmodels, GEOparse
 - **Node.js 16+**: `docx` package (paper generation only)
 
 ## Key Results
