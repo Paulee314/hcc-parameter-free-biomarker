@@ -1,0 +1,93 @@
+sample_id,sample_type,age_at_diagnosis,gender,stage,fibrosis_ishak_score,tumor_grade,vascular_invasion,dataset,cirrhosis_status
+TCGA-LIHC-0005T,Tumor,62,Male,Stage IV,6,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0007T,Tumor,43,Female,Stage IV,6,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0010T,Tumor,46,Male,Stage I,5,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0014T,Tumor,46,Male,Stage IV,5,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0018T,Tumor,41,Female,Stage II,6,G1,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0019T,Tumor,47,Male,Stage III,5,G3,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0022T,Tumor,49,Female,Stage III,5,GX,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0027T,Tumor,50,Female,Stage III,5,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0028T,Tumor,67,Male,Stage IV,5,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0029T,Tumor,82,Male,Stage III,6,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0040T,Tumor,67,Male,Stage II,6,G4,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0043T,Tumor,70,Male,Stage I,6,G1,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0046T,Tumor,71,Male,Stage I,6,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0047T,Tumor,64,Female,Stage IV,5,G2,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0048T,Tumor,45,Male,Stage III,6,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0049T,Tumor,57,Female,Stage IV,6,G1,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0053T,Tumor,67,Male,Stage I,6,G2,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0058T,Tumor,66,Male,Stage IV,5,G1,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0060T,Tumor,72,Male,Stage III,6,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0064T,Tumor,65,Male,Stage II,6,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0069T,Tumor,61,Male,Stage IV,5,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0071T,Tumor,82,Female,Stage II,6,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0074T,Tumor,80,Male,Stage III,6,G1,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0082T,Tumor,40,Female,Stage IV,6,G2,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0086T,Tumor,76,Male,Stage I,5,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0090T,Tumor,55,Female,Stage I,6,G4,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0093T,Tumor,59,Male,Stage II,6,G3,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0100T,Tumor,51,Male,Stage I,5,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0101T,Tumor,55,Male,Stage I,5,G3,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0102T,Tumor,76,Male,Stage II,5,G3,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0104T,Tumor,70,Male,Stage I,5,G2,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0112T,Tumor,82,Male,Stage I,5,G3,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0119T,Tumor,84,Male,Stage I,6,G1,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0121T,Tumor,49,Female,Stage III,5,G1,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0129T,Tumor,77,Male,Stage III,6,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0130T,Tumor,53,Female,Stage I,5,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0132T,Tumor,56,Male,Stage III,5,G4,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0153T,Tumor,42,Male,Stage II,5,GX,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0154T,Tumor,83,Male,Stage IV,6,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0163T,Tumor,49,Female,Stage IV,5,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0170T,Tumor,81,Female,Stage II,5,G1,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0173T,Tumor,49,Male,Stage II,5,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0176T,Tumor,52,Male,Stage I,6,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0177T,Tumor,49,Male,Stage III,6,G4,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0183T,Tumor,82,Female,Stage II,6,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0185T,Tumor,81,Female,Stage II,6,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0187T,Tumor,74,Male,Stage I,5,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0190T,Tumor,84,Male,Stage II,5,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0191T,Tumor,43,Male,Stage II,5,G4,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0193T,Tumor,54,Male,Stage II,6,G4,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0194T,Tumor,56,Male,Stage I,6,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0196T,Tumor,40,Male,Stage III,5,G2,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0200T,Tumor,54,Male,Stage III,5,G1,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0203T,Tumor,52,Male,Stage IV,6,G1,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0211T,Tumor,75,Female,Stage II,6,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0212T,Tumor,47,Female,Stage IV,5,G2,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0213T,Tumor,46,Male,Stage IV,6,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0214T,Tumor,50,Male,Stage II,5,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0221T,Tumor,61,Male,Stage I,6,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0224T,Tumor,41,Male,Stage III,6,G4,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0229T,Tumor,82,Male,Stage III,6,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0230T,Tumor,71,Female,Stage II,5,G1,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0232T,Tumor,68,Male,Stage II,6,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0233T,Tumor,45,Male,Stage IV,5,G1,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0237T,Tumor,46,Female,Stage I,6,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0238T,Tumor,47,Female,Stage IV,5,G3,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0243T,Tumor,41,Male,Stage III,6,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0244T,Tumor,66,Male,Stage I,6,GX,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0246T,Tumor,65,Male,Stage I,6,G2,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0256T,Tumor,42,Male,Stage IV,6,G2,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0269T,Tumor,75,Male,Stage III,5,G4,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0271T,Tumor,74,Female,Stage II,6,GX,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0286T,Tumor,40,Male,Stage II,6,G4,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0290T,Tumor,44,Male,Stage III,5,GX,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0293T,Tumor,57,Male,Stage III,5,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0294T,Tumor,54,Female,Stage III,5,G4,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0296T,Tumor,49,Female,Stage I,5,G2,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0297T,Tumor,49,Male,Stage II,5,G2,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0304T,Tumor,46,Female,Stage IV,5,G4,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0315T,Tumor,70,Male,Stage I,6,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0316T,Tumor,45,Male,Stage II,5,G2,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0318T,Tumor,43,Male,Stage III,6,GX,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0002N,Normal,41,Male,Stage I,5,GX,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0004N,Normal,75,Female,Stage II,6,G4,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0007N,Normal,55,Male,Stage II,5,G1,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0013N,Normal,74,Male,Stage III,6,GX,No,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0019N,Normal,80,Female,Stage II,5,G3,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0021N,Normal,54,Male,Stage III,6,G4,Yes,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0033N,Normal,73,Male,Stage IV,6,G1,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0035N,Normal,40,Male,Stage I,5,G2,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0041N,Normal,66,Male,Stage III,5,G4,Not reported,TCGA-LIHC,Cirrhotic
+TCGA-LIHC-0049N,Normal,84,Female,Stage I,5,GX,Not reported,TCGA-LIHC,Cirrhotic

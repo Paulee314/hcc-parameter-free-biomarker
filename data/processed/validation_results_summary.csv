@@ -1,0 +1,8 @@
+Dataset,Type,Platform,Etiology,Comparison,Scoring_Method,N_HCC,N_Ctrl,N_Total,Genes_Found,AUC,CI_Lower,CI_Upper,P_value,Notes
+GSE94660,Tissue,RNA-seq,HBV,HCC vs Adjacent,Transductive z-score,21,21,42,16,1.0,1.0,1.0,3.13e-08,
+GSE25097,Tissue,Affy,Mixed,HCC vs Non-tumor/Cirrh/Healthy,Transductive z-score,268,289,557,16,0.997,0.994,0.999,2.00e-91,
+GSE14520,Tissue,Affy,HBV,HCC vs Adjacent,Transductive z-score,225,220,445,16,0.992,0.985,0.997,4.70e-72,
+GSE144269,Tissue,RNA-seq,HDV,HCC vs Adjacent,Transductive z-score,70,70,140,16,0.972,0.94,0.994,5.78e-22,HDV etiology confirmed from sample IDs (HDV_*) and titles
+GSE54236,Tissue,Agilent,Mixed,HCC vs Cirrhotic,Transductive z-score,81,80,161,16,0.878,0.813,0.935,1.18e-16,Controls=cirrhotic non-malignant tissue from char_0 GEO metadata
+GSE174302,cfRNA,RNA-seq,Mixed,HCC vs Healthy,Method B (leak-free),27,46,73,16,0.779,0.647,0.902,9.79e-04,Full dataset=230 (5 cancer types+healthy); subset to HCC+NC=73; Z-scores computed using healthy-only mean/SD
+GSE142987,cfRNA,RNA-seq,Mixed,HCC vs Healthy,Method B (leak-free),35,30,65,16,0.758,0.624,0.875,2.12e-03,Z-scores computed using healthy-only mean/SD

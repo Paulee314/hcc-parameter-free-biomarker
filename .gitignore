@@ -1,0 +1,5 @@
+node_modules/
+*.docx
+__pycache__/
+*.pyc
+.DS_Store
