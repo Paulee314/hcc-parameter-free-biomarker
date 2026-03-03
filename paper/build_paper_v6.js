@@ -209,7 +209,19 @@ new Table({
 p("", { after: 60 }),
 p([b("Table 1. "), it("Datasets used in this study.")], { after: 200 }),
 
-h("2.2 The Leakage Problem: ML Baseline", 2),
+h("2.2 Gene Signature Derivation", 2),
+
+p([
+  n("The 16-gene signature was derived from two independent discovery cohorts not used in any subsequent validation: GSE14520 (HBV-associated HCC with paired tumor/non-tumor tissue and clinical annotations) and GSE126848 (MASLD/NASH spectrum with histologically graded fibrosis, F0\u2013F4). Together, these datasets span the full metabolic liver disease\u2013to\u2013cancer trajectory. Critically, "),
+  b("none of the three validation cohorts (TCGA-LIHC, GSE144269, GSE135251) were used for gene selection"),
+  n(", ensuring complete separation between discovery and validation."),
+]),
+
+p([
+  n("Gene selection proceeded in three stages. First, differential expression analysis (limma) across the progression spectrum (normal \u2192 steatosis \u2192 NASH/fibrosis \u2192 HCC) identified genes with monotonic stage-associated expression changes. Second, Random Forest feature importance with SHAP (SHapley Additive exPlanations) values ranked genes by their contribution to disease-stage discrimination. Third, recursive feature elimination reduced an initial 27-gene consensus to 16 genes grouped into two biologically coherent modules: an UP module (5 genes: PRC1, RACGAP1, MCM3, DTYMK, CDKN3) enriched for proliferation and cell-cycle functions, and a DOWN module (11 genes: CYP1A2, LCAT, FCN3, MT1F, CXCL14, FCN2, CLEC4M, MT1X, CLEC1B, CRHBP, GDF2) enriched for hepatocyte identity and differentiation markers. Gene identities and directional assignments (UP or DOWN) were locked after discovery and treated as fixed inputs to all subsequent analyses."),
+], { indent: true }),
+
+h("2.3 The Leakage Problem: ML Baseline", 2),
 
 p([
   n("To quantify the effect of transductive leakage, a standard pipeline was constructed using scikit-learn: a "),
@@ -221,7 +233,7 @@ p([
   n(": the scaler\u2019s mean and variance are computed from both training and test partitions, and the classifier learns decision boundaries from training data. This is routine practice\u2014and the source of the problem."),
 ]),
 
-h("2.3 The Fix: Parameter-Free Directional Z-Score", 2),
+h("2.4 The Fix: Parameter-Free Directional Z-Score", 2),
 
 p([
   n("The fix eliminates all fitted parameters. The 16-gene signature comprises an UP module (5 genes: PRC1, RACGAP1, MCM3, DTYMK, CDKN3) and a DOWN module (11 genes: CYP1A2, LCAT, FCN3, MT1F, CXCL14, FCN2, CLEC4M, MT1X, CLEC1B, CRHBP, GDF2). For each dataset independently, the mean (\u03BC) and standard deviation (\u03C3) for each gene are computed "),
@@ -256,14 +268,14 @@ p([
   n("When applied to a new cohort, only that cohort\u2019s control distribution is used for normalization. There is nothing to overfit, because there is nothing being fitted."),
 ], { indent: true }),
 
-h("2.4 Covariate Hierarchy Analysis", 2),
+h("2.5 Covariate Hierarchy Analysis", 2),
 
 p("To assess whether the signature score captures confounding rather than true biological signal, we performed a logistic regression covariate hierarchy on TCGA-LIHC (n = 370). Five nested models were fit: (1) age only, (2) sex only, (3) age + sex, (4) signature score only, and (5) signature score + age + sex. Predictions were obtained via leave-one-out cross-validation. Additionally, we computed Pearson correlation between signature score and age within tumor samples, conducted Mann\u2013Whitney tests on score distributions stratified by sex, and performed a permutation test (1,000 permutations) comparing observed AUC to permuted class labels."),
-h("2.5 Cirrhosis-as-Baseline Testing", 2),
+h("2.6 Cirrhosis-as-Baseline Testing", 2),
 
 p("HCC screening is performed in patients with existing liver disease, not in healthy individuals. To evaluate clinical validity, we tested the signature across seven configurations of increasing stringency, culminating in the most confounded comparison: HCC arising on a cirrhotic background (Ishak 5\u20136) versus F4 cirrhosis biopsies without cancer. We also tested with cirrhosis-normalized scoring, where Z-score parameters are anchored to F4 cirrhotic samples rather than healthy tissue, to confirm that the signal is not an artifact of the reference choice."),
 
-h("2.6 Statistical Analysis", 2),
+h("2.7 Statistical Analysis", 2),
 
 p([
   n("Performance was quantified by ROC AUC. Group comparisons used Mann\u2013Whitney "),
@@ -493,7 +505,7 @@ h("5. Limitations", 1),
 p("All analyses are retrospective. Prospective, multi-site clinical validation has not been performed. The cirrhosis tissue cohorts, while showing consistent results, are modest in size (n = 10\u201314). HCC is etiologically heterogeneous; whether the signature performs equivalently across viral, metabolic, and alcohol-related subtypes requires dedicated subgroup analysis."),
 
 p([
-  n("Feature selection (the 16 genes) was performed a priori in independent work. The methodology evaluated here is strictly the "),
+  n("Feature selection (the 16 genes) was derived from independent discovery cohorts (GSE14520 and GSE126848) using differential expression, SHAP-based feature importance, and recursive feature elimination (Section 2.2). No validation cohort data informed gene selection. The methodology evaluated here is strictly the "),
   it("validation pipeline"),
   n(", which is structurally parameter-free: it employs no fitted models, no learned boundaries, and no optimized thresholds. Gene identities and directions are fixed inputs, not outputs of the pipeline under test."),
 ], { indent: true }),
@@ -518,7 +530,7 @@ h("Data Availability", 1),
 
 p("All datasets used in this study are publicly available. TCGA-LIHC expression data (HTSeq log\u2082(FPKM+1)) were obtained from the UCSC Xena Browser. GSE144269 and GSE135251 are available through the NCBI Gene Expression Omnibus. No restricted-access or proprietary data were used."),
 
-p("The complete analysis pipeline\u2014including the 16-gene reference file (signature_reference.py), the parameter-free scoring function (method_b_score()), cirrhosis battery analysis, covariate hierarchy analysis, and all figure-generation code\u2014is available at [https://github.com/Paulee314/hcc-parameter-free-biomarker]. The parameter-free scoring pipeline requires only Python 3.10 with NumPy, SciPy, pandas, and scikit-learn; no proprietary software or specialized hardware is needed. All results are fully reproducible from the provided code and public data.", { indent: true }),
+p("The complete analysis pipeline\u2014including the 16-gene reference file (signature_reference.py), the parameter-free scoring function (method_b_score()), cirrhosis battery analysis, covariate hierarchy analysis, and all figure-generation code\u2014is available at https://github.com/Paulee314/hcc-parameter-free-biomarker. The parameter-free scoring pipeline requires only Python 3.10 with NumPy, SciPy, pandas, and scikit-learn; no proprietary software or specialized hardware is needed. All results are fully reproducible from the provided code and public data.", { indent: true }),
 
 // ═══════════════ APPENDIX ═══════════════
 h("Appendix: 16-Gene Signature", 1),
