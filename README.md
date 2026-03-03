@@ -42,7 +42,7 @@ Score  = mean(Z_up) - mean(Z_down)
 │   ├── metadata/                   # Sample metadata for each cohort
 │   └── processed/                  # Analysis outputs and result summaries
 ├── figures/
-│   ├── fig2_fibrosis_gradient.png  # Score across fibrosis-to-cancer continuum (Figure 1)
+│   ├── fig1_fibrosis_gradient.png  # Score across fibrosis-to-cancer continuum (Figure 1)
 │   ├── fig2_method_comparison.png  # ML vs parameter-free pipeline (Figure 2)
 │   └── fig3_pergene_asymmetry.png  # Per-gene AUC asymmetry (Figure 3)
 ├── scripts/
