@@ -518,7 +518,7 @@ h("Data Availability", 1),
 
 p("All datasets used in this study are publicly available. TCGA-LIHC expression data (HTSeq log\u2082(FPKM+1)) were obtained from the UCSC Xena Browser. GSE144269 and GSE135251 are available through the NCBI Gene Expression Omnibus. No restricted-access or proprietary data were used."),
 
-p("The complete analysis pipeline\u2014including the 16-gene reference file (signature_reference.py), the parameter-free scoring function (method_b_score()), cirrhosis battery analysis, covariate hierarchy analysis, and all figure-generation code\u2014is available at [GitHub repository URL to be provided upon publication]. The parameter-free scoring pipeline requires only Python 3.10 with NumPy, SciPy, pandas, and scikit-learn; no proprietary software or specialized hardware is needed. All results are fully reproducible from the provided code and public data.", { indent: true }),
+p("The complete analysis pipeline\u2014including the 16-gene reference file (signature_reference.py), the parameter-free scoring function (method_b_score()), cirrhosis battery analysis, covariate hierarchy analysis, and all figure-generation code\u2014is available at [https://github.com/Paulee314/hcc-parameter-free-biomarker]. The parameter-free scoring pipeline requires only Python 3.10 with NumPy, SciPy, pandas, and scikit-learn; no proprietary software or specialized hardware is needed. All results are fully reproducible from the provided code and public data.", { indent: true }),
 
 // ═══════════════ APPENDIX ═══════════════
 h("Appendix: 16-Gene Signature", 1),
